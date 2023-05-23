@@ -1,4 +1,5 @@
 import java.util.Locale;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,6 +21,33 @@ public class Main {
         bottom = 8.0;
         height = 5.0;
         area = (int) (left + bottom)/2.0 * height;
-        System.out.printf("%.1f",area);
+        System.out.printf("%.1f%n",area);
+
+        // Data injection by users to calc polygon area
+        Locale.setDefault(Locale.US);
+        double inputLeftValue, inputBottomValue, inputHeightValue, areaValue;
+        System.out.println("Digite a medida do lado esquerdo do poligono:");
+        Scanner inputLeft = new Scanner(System.in);
+        inputLeftValue = inputLeft.nextDouble();
+
+
+        System.out.println("Digite a medida da base do poligono:");
+        Scanner inputBottom = new Scanner(System.in);
+        inputBottomValue = inputBottom.nextDouble();
+
+        System.out.println("Digite a altura do poligono:");
+        Scanner inputHeight = new Scanner(System.in);
+        inputHeightValue = inputHeight.nextDouble();
+
+        areaValue = (inputLeftValue + inputBottomValue) / 2 * inputHeightValue;
+
+        System.out.println("Medida do lado esquerdo: " + inputLeftValue);
+        System.out.println("Medida da base: " + inputBottomValue);
+        System.out.println("Medida da altura: " + inputHeightValue);
+        System.out.printf("A área do poligono é : %.2f%n", areaValue);
+
+        inputLeft.close();
+        inputBottom.close();
+        inputHeight.close();
     }
 }
