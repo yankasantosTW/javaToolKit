@@ -6,9 +6,11 @@ public class Main {
         System.out.println("Digite seu nome, sobrenome e idade");
         Scanner textInput = new Scanner(System.in);
 
+        int age = textInput.nextInt();
+        textInput.nextLine();
         String username = textInput.nextLine();
         String lastName = textInput.nextLine();
-        String age = textInput.nextLine();
+
 
         System.out.println("Dados do usuário:");
         System.out.println(username+ " " + lastName);
